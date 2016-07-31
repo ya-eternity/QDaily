@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404643AA1D30D49900AC37C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404643A91D30D49900AC37C1 /* MainViewController.swift */; };
+		404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; };
+		404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; };
 		408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764241D2B8BB9003C7D4A /* AppDelegate.swift */; };
-		408764271D2B8BB9003C7D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764261D2B8BB9003C7D4A /* ViewController.swift */; };
-		4087642A1D2B8BB9003C7D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 408764281D2B8BB9003C7D4A /* Main.storyboard */; };
 		4087642C1D2B8BB9003C7D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4087642B1D2B8BB9003C7D4A /* Assets.xcassets */; };
 		4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */; };
 		4087643A1D2B8BB9003C7D4A /* QDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764391D2B8BB9003C7D4A /* QDailyTests.swift */; };
@@ -34,10 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		400295381D2E863800B297E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		404643A91D30D49900AC37C1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		408764211D2B8BB8003C7D4A /* QDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		408764241D2B8BB9003C7D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		408764261D2B8BB9003C7D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		408764291D2B8BB9003C7D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4087642B1D2B8BB9003C7D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4087642E1D2B8BB9003C7D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		408764301D2B8BB9003C7D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */,
+				404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +81,8 @@
 		408764181D2B8BB8003C7D4A = {
 			isa = PBXGroup;
 			children = (
+				4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */,
+				400295381D2E863800B297E7 /* Alamofire.framework */,
 				408764231D2B8BB9003C7D4A /* QDaily */,
 				408764381D2B8BB9003C7D4A /* QDailyTests */,
 				408764431D2B8BB9003C7D4A /* QDailyUITests */,
@@ -98,8 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				408764241D2B8BB9003C7D4A /* AppDelegate.swift */,
-				408764261D2B8BB9003C7D4A /* ViewController.swift */,
-				408764281D2B8BB9003C7D4A /* Main.storyboard */,
+				404643A91D30D49900AC37C1 /* MainViewController.swift */,
 				4087642B1D2B8BB9003C7D4A /* Assets.xcassets */,
 				4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */,
 				408764301D2B8BB9003C7D4A /* Info.plist */,
@@ -135,6 +140,7 @@
 				4087641D1D2B8BB8003C7D4A /* Sources */,
 				4087641E1D2B8BB8003C7D4A /* Frameworks */,
 				4087641F1D2B8BB8003C7D4A /* Resources */,
+				404643AB1D30DCF000AC37C1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,7 +237,6 @@
 			files = (
 				4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */,
 				4087642C1D2B8BB9003C7D4A /* Assets.xcassets in Resources */,
-				4087642A1D2B8BB9003C7D4A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +256,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		404643AB1D30DCF000AC37C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4087641D1D2B8BB8003C7D4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408764271D2B8BB9003C7D4A /* ViewController.swift in Sources */,
 				408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */,
+				404643AA1D30D49900AC37C1 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		408764281D2B8BB9003C7D4A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				408764291D2B8BB9003C7D4A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -399,6 +414,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QDaily",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = QDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZW.QDaily;
@@ -410,6 +441,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QDaily",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyJSON/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = QDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZW.QDaily;
@@ -482,6 +529,7 @@
 				4087644B1D2B8BB9003C7D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4087644C1D2B8BB9003C7D4A /* Build configuration list for PBXNativeTarget "QDailyTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +538,7 @@
 				4087644E1D2B8BB9003C7D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4087644F1D2B8BB9003C7D4A /* Build configuration list for PBXNativeTarget "QDailyUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +547,7 @@
 				408764511D2B8BB9003C7D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
