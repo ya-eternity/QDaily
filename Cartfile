@@ -1,3 +1,5 @@
 github "Alamofire/Alamofire" ~> 3.0
 github "SwiftyJSON/SwiftyJSON"
+github "SnapKit/SnapKit"
+github "Alamofire/AlamofireImage" ~> 2.0
 

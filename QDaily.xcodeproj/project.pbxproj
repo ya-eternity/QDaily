@@ -15,6 +15,9 @@
 		4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */; };
 		4087643A1D2B8BB9003C7D4A /* QDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764391D2B8BB9003C7D4A /* QDailyTests.swift */; };
 		408764451D2B8BB9003C7D4A /* QDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764441D2B8BB9003C7D4A /* QDailyUITests.swift */; };
+		FED0C8B41D585D1200D6C14C /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0C8B31D585D1200D6C14C /* HomeModel.swift */; };
+		FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
+		FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		408764401D2B8BB9003C7D4A /* QDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		408764441D2B8BB9003C7D4A /* QDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDailyUITests.swift; sourceTree = "<group>"; };
 		408764461D2B8BB9003C7D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED0C8B31D585D1200D6C14C /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		FED0C8B71D58864D00D6C14C /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 			files = (
 				404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */,
 				404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */,
+				FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */,
+				FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,8 +89,7 @@
 		408764181D2B8BB8003C7D4A = {
 			isa = PBXGroup;
 			children = (
-				4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */,
-				400295381D2E863800B297E7 /* Alamofire.framework */,
+				FED0C8BA1D58865800D6C14C /* Framework */,
 				408764231D2B8BB9003C7D4A /* QDaily */,
 				408764381D2B8BB9003C7D4A /* QDailyTests */,
 				408764431D2B8BB9003C7D4A /* QDailyUITests */,
@@ -105,6 +112,7 @@
 			children = (
 				408764241D2B8BB9003C7D4A /* AppDelegate.swift */,
 				404643A91D30D49900AC37C1 /* MainViewController.swift */,
+				FED0C8B31D585D1200D6C14C /* HomeModel.swift */,
 				4087642B1D2B8BB9003C7D4A /* Assets.xcassets */,
 				4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */,
 				408764301D2B8BB9003C7D4A /* Info.plist */,
@@ -128,6 +136,17 @@
 				408764461D2B8BB9003C7D4A /* Info.plist */,
 			);
 			path = QDailyUITests;
+			sourceTree = "<group>";
+		};
+		FED0C8BA1D58865800D6C14C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */,
+				FED0C8B71D58864D00D6C14C /* SnapKit.framework */,
+				4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */,
+				400295381D2E863800B297E7 /* Alamofire.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +300,7 @@
 			files = (
 				408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */,
 				404643AA1D30D49900AC37C1 /* MainViewController.swift in Sources */,
+				FED0C8B41D585D1200D6C14C /* HomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +417,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -406,6 +427,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
