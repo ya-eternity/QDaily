@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		404643AA1D30D49900AC37C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404643A91D30D49900AC37C1 /* MainViewController.swift */; };
 		404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; };
 		404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; };
 		408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764241D2B8BB9003C7D4A /* AppDelegate.swift */; };
@@ -15,9 +14,21 @@
 		4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */; };
 		4087643A1D2B8BB9003C7D4A /* QDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764391D2B8BB9003C7D4A /* QDailyTests.swift */; };
 		408764451D2B8BB9003C7D4A /* QDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764441D2B8BB9003C7D4A /* QDailyUITests.swift */; };
-		FED0C8B41D585D1200D6C14C /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0C8B31D585D1200D6C14C /* HomeModel.swift */; };
+		FE98A5F91D5D6B7A00584F66 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F31D5D6B7A00584F66 /* HomeModel.swift */; };
+		FE98A5FA1D5D6B7A00584F66 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F51D5D6B7A00584F66 /* MainViewController.swift */; };
+		FE98A5FB1D5D6B7A00584F66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */; };
+		FE98A5FD1D5D6CB600584F66 /* ZWCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */; };
+		FE98A5FF1D5D802C00584F66 /* ZWCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */; };
 		FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
 		FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; };
+		FEDE50161D596A2100BC52FE /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
+		FEDE50171D596A2100BC52FE /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEDE50181D596A2100BC52FE /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; };
+		FEDE50191D596A2100BC52FE /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEDE501A1D596A2100BC52FE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; };
+		FEDE501B1D596A2100BC52FE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEDE501C1D596A2100BC52FE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; };
+		FEDE501D1D596A2100BC52FE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +48,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FEDE501E1D596A2100BC52FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FEDE50171D596A2100BC52FE /* AlamofireImage.framework in Embed Frameworks */,
+				FEDE50191D596A2100BC52FE /* SnapKit.framework in Embed Frameworks */,
+				FEDE501B1D596A2100BC52FE /* SwiftyJSON.framework in Embed Frameworks */,
+				FEDE501D1D596A2100BC52FE /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		400295381D2E863800B297E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		404643A91D30D49900AC37C1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		408764211D2B8BB8003C7D4A /* QDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		408764241D2B8BB9003C7D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4087642B1D2B8BB9003C7D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +79,11 @@
 		408764401D2B8BB9003C7D4A /* QDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		408764441D2B8BB9003C7D4A /* QDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDailyUITests.swift; sourceTree = "<group>"; };
 		408764461D2B8BB9003C7D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FED0C8B31D585D1200D6C14C /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		FE98A5F31D5D6B7A00584F66 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		FE98A5F51D5D6B7A00584F66 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWCarouselView.swift; sourceTree = "<group>"; };
+		FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWCarouselCell.swift; sourceTree = "<group>"; };
 		FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		FED0C8B71D58864D00D6C14C /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,9 +94,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */,
-				404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */,
+				FEDE50161D596A2100BC52FE /* AlamofireImage.framework in Frameworks */,
 				FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */,
+				FEDE50181D596A2100BC52FE /* SnapKit.framework in Frameworks */,
+				FEDE501A1D596A2100BC52FE /* SwiftyJSON.framework in Frameworks */,
+				404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */,
 				FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */,
+				FEDE501C1D596A2100BC52FE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,9 +145,8 @@
 		408764231D2B8BB9003C7D4A /* QDaily */ = {
 			isa = PBXGroup;
 			children = (
+				FE98A5F01D5D6B7A00584F66 /* Classes */,
 				408764241D2B8BB9003C7D4A /* AppDelegate.swift */,
-				404643A91D30D49900AC37C1 /* MainViewController.swift */,
-				FED0C8B31D585D1200D6C14C /* HomeModel.swift */,
 				4087642B1D2B8BB9003C7D4A /* Assets.xcassets */,
 				4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */,
 				408764301D2B8BB9003C7D4A /* Info.plist */,
@@ -138,6 +172,58 @@
 			path = QDailyUITests;
 			sourceTree = "<group>";
 		};
+		FE98A5F01D5D6B7A00584F66 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FE98A5F11D5D6B7A00584F66 /* Home */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FE98A5F11D5D6B7A00584F66 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FE98A5F21D5D6B7A00584F66 /* Models */,
+				FE98A5F41D5D6B7A00584F66 /* ViewControllers */,
+				FE98A5F61D5D6B7A00584F66 /* ViewModels */,
+				FE98A5F81D5D6B7A00584F66 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FE98A5F21D5D6B7A00584F66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE98A5F31D5D6B7A00584F66 /* HomeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE98A5F41D5D6B7A00584F66 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE98A5F51D5D6B7A00584F66 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE98A5F61D5D6B7A00584F66 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FE98A5F81D5D6B7A00584F66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */,
+				FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FED0C8BA1D58865800D6C14C /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +246,7 @@
 				4087641E1D2B8BB8003C7D4A /* Frameworks */,
 				4087641F1D2B8BB8003C7D4A /* Resources */,
 				404643AB1D30DCF000AC37C1 /* ShellScript */,
+				FEDE501E1D596A2100BC52FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,9 +385,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE98A5FF1D5D802C00584F66 /* ZWCarouselCell.swift in Sources */,
+				FE98A5FA1D5D6B7A00584F66 /* MainViewController.swift in Sources */,
+				FE98A5F91D5D6B7A00584F66 /* HomeModel.swift in Sources */,
+				FE98A5FD1D5D6CB600584F66 /* ZWCarouselView.swift in Sources */,
 				408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */,
-				404643AA1D30D49900AC37C1 /* MainViewController.swift in Sources */,
-				FED0C8B41D585D1200D6C14C /* HomeModel.swift in Sources */,
+				FE98A5FB1D5D6B7A00584F66 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
