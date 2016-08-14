@@ -26,7 +26,9 @@ class ZWCarouselCell: UICollectionViewCell {
     
     func setupSubviews() {
         imageView = UIImageView.init()
+        imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         self.contentView.addSubview(imageView!)
+        
         imageView?.snp_makeConstraints(closure: { (make) in
             make.edges.equalToSuperview()
         })
@@ -35,11 +37,15 @@ class ZWCarouselCell: UICollectionViewCell {
         titleLabel?.backgroundColor = UIColor.clearColor()
         titleLabel?.textColor = UIColor.whiteColor()
         titleLabel?.textAlignment = NSTextAlignment.Left
-        titleLabel?.font = UIFont.boldSystemFontOfSize(24)
+        titleLabel?.numberOfLines = 0
+        titleLabel?.font = UIFont.boldSystemFontOfSize(20)
         self.contentView.addSubview(titleLabel!)
+        
         titleLabel?.snp_makeConstraints(closure: { (make) in
-            make.bottom.equalToSuperview().inset(-30)
+            make.bottom.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
+            make.left.equalToSuperview().inset(30)
+            make.right.equalToSuperview().inset(30)
         })
     }
     
