@@ -19,6 +19,12 @@
 		FE98A5FB1D5D6B7A00584F66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */; };
 		FE98A5FD1D5D6CB600584F66 /* ZWCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */; };
 		FE98A5FF1D5D802C00584F66 /* ZWCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */; };
+		FECBAD661D64156A00DABF6C /* HomeInstituteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECBAD641D64156A00DABF6C /* HomeInstituteCell.swift */; };
+		FECBAD671D64156A00DABF6C /* HomeInstituteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD651D64156A00DABF6C /* HomeInstituteCell.xib */; };
+		FECBAD6E1D64374800DABF6C /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECBAD6C1D64374800DABF6C /* HomeFeedCell.swift */; };
+		FECBAD6F1D64374800DABF6C /* HomeFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD6D1D64374800DABF6C /* HomeFeedCell.xib */; };
+		FECBAD721D64442A00DABF6C /* FeedTypeTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECBAD701D64442A00DABF6C /* FeedTypeTwoCell.swift */; };
+		FECBAD731D64442A00DABF6C /* FeedTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD711D64442A00DABF6C /* FeedTypeTwoCell.xib */; };
 		FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
 		FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; };
 		FEDE50161D596A2100BC52FE /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
@@ -84,6 +90,12 @@
 		FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWCarouselView.swift; sourceTree = "<group>"; };
 		FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWCarouselCell.swift; sourceTree = "<group>"; };
+		FECBAD641D64156A00DABF6C /* HomeInstituteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInstituteCell.swift; sourceTree = "<group>"; };
+		FECBAD651D64156A00DABF6C /* HomeInstituteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeInstituteCell.xib; sourceTree = "<group>"; };
+		FECBAD6C1D64374800DABF6C /* HomeFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
+		FECBAD6D1D64374800DABF6C /* HomeFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFeedCell.xib; sourceTree = "<group>"; };
+		FECBAD701D64442A00DABF6C /* FeedTypeTwoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTypeTwoCell.swift; sourceTree = "<group>"; };
+		FECBAD711D64442A00DABF6C /* FeedTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTypeTwoCell.xib; sourceTree = "<group>"; };
 		FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		FED0C8B71D58864D00D6C14C /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +232,12 @@
 			children = (
 				FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */,
 				FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */,
+				FECBAD641D64156A00DABF6C /* HomeInstituteCell.swift */,
+				FECBAD651D64156A00DABF6C /* HomeInstituteCell.xib */,
+				FECBAD6C1D64374800DABF6C /* HomeFeedCell.swift */,
+				FECBAD6D1D64374800DABF6C /* HomeFeedCell.xib */,
+				FECBAD701D64442A00DABF6C /* FeedTypeTwoCell.swift */,
+				FECBAD711D64442A00DABF6C /* FeedTypeTwoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +361,9 @@
 			files = (
 				4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */,
 				4087642C1D2B8BB9003C7D4A /* Assets.xcassets in Resources */,
+				FECBAD6F1D64374800DABF6C /* HomeFeedCell.xib in Resources */,
+				FECBAD671D64156A00DABF6C /* HomeInstituteCell.xib in Resources */,
+				FECBAD731D64442A00DABF6C /* FeedTypeTwoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,10 +408,13 @@
 			files = (
 				FE98A5FF1D5D802C00584F66 /* ZWCarouselCell.swift in Sources */,
 				FE98A5FA1D5D6B7A00584F66 /* MainViewController.swift in Sources */,
+				FECBAD6E1D64374800DABF6C /* HomeFeedCell.swift in Sources */,
 				FE98A5F91D5D6B7A00584F66 /* HomeModel.swift in Sources */,
 				FE98A5FD1D5D6CB600584F66 /* ZWCarouselView.swift in Sources */,
+				FECBAD721D64442A00DABF6C /* FeedTypeTwoCell.swift in Sources */,
 				408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */,
 				FE98A5FB1D5D6B7A00584F66 /* HomeViewModel.swift in Sources */,
+				FECBAD661D64156A00DABF6C /* HomeInstituteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

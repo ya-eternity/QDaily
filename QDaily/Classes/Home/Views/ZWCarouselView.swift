@@ -19,7 +19,7 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     var titles: Array<String> = []
     
     var currentIndex = 0
-    var timeInterval = 3.0
+    let timeInterval = 5.0
     
     
     private let ZWCarouselCellReusedId = "ZWCarouselCell";
