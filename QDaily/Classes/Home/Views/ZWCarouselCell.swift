@@ -24,7 +24,12 @@ class ZWCarouselCell: UICollectionViewCell {
         super.init(coder: aDecoder);
     }
     
+    deinit {
+        print("ZWCarouselCell")
+    }
+    
     func setupSubviews() {
+    
         imageView = UIImageView.init()
         imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         self.contentView.addSubview(imageView!)

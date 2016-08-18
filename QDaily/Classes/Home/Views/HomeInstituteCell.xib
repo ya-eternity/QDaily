@@ -88,6 +88,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="iconImageView" destination="n18-OZ-RPE" id="C0f-22-fep"/>
+                <outlet property="separatorView" destination="dkD-O4-9AK" id="eJ1-7M-WfB"/>
                 <outlet property="subjectDetail" destination="yLU-hI-wnR" id="rON-dI-BAR"/>
                 <outlet property="subjectImageView" destination="hZK-VK-vil" id="FCJ-Xi-FaN"/>
                 <outlet property="subjectTitle" destination="gqB-se-LWr" id="w62-D2-8VQ"/>

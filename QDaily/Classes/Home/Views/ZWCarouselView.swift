@@ -9,38 +9,80 @@
 import UIKit
 import AlamofireImage
 
+
+@objc protocol ZWCarouselViewDelegate: class {
+    
+    optional func carouselView(carouselView: ZWCarouselView, didClickedIndex index: Int)
+    
+}
+
+
 class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var imageUrls: Array<String> = [] {
         didSet {
+            self.pageControl.numberOfPages = imageUrls.count
             contentView.contentOffset = CGPointMake(contentView.frame.size.width, 0)
+            
         }
     }
     var titles: Array<String> = []
     
+    var timer: NSTimer?
     var currentIndex = 0
+    weak var delegate: ZWCarouselViewDelegate?
+    
     let timeInterval = 5.0
-    
-    
     private let ZWCarouselCellReusedId = "ZWCarouselCell";
+    
+    
+    var alercell: ZWCarouselCell?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.whiteColor()
-        self.addSubview(self.contentView)
         
+        self.addSubview(self.contentView)
         self.addSubview(self.pageControl)
-        self.pageControl.snp_makeConstraints { (make) in
+        
+        self.pageControl.snp_makeConstraints {(make) in
             make.size.equalTo(self.pageControl.sizeForNumberOfPages(self.pageControl.numberOfPages))
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        self.timer.fireDate = NSDate(timeInterval: timeInterval, sinceDate: NSDate())
     }
     
+
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    deinit {
+        print("轮播deinit")
+    }
+    
+    
+    override func willMoveToSuperview(newSuperview: UIView?) {
+        super.willMoveToSuperview(newSuperview)
+        guard let _ = newSuperview else {
+            self.invalidateTimer()
+            return
+        }
+        self.sutupTimer()
+    }
+    
+    
+    func sutupTimer() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(self.timeInterval, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+        timer!.fireDate = NSDate(timeInterval: timeInterval, sinceDate: NSDate())
+    }
+    
+    func invalidateTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
     func timerUpdate() {
@@ -80,11 +122,14 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-//    MARK: UIScrollViewDelegate
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        self.timer.fireDate = NSDate.distantFuture()
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if let _delegate = delegate {
+            _delegate.carouselView?(self, didClickedIndex: currentIndex);
+        }
     }
     
+//    MARK: UIScrollViewDelegate
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.size.width) - 1
         if currentIndex < 0 {
@@ -95,11 +140,11 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         
         self.pageControl.currentPage = currentIndex
         scrollView.setContentOffset(CGPointMake((CGFloat(currentIndex) + 1) * contentView.frame.size.width, 0), animated: false)
-        self.timer.fireDate = NSDate(timeInterval: timeInterval, sinceDate: NSDate())
     }
     
 //    MARK: - Setter and Getter
     lazy var contentView: UICollectionView = {
+//        [unowned self] in
         let layout = UICollectionViewFlowLayout.init()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -118,8 +163,9 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }()
     
     lazy var pageControl: UIPageControl = {
+//        [unowned self] in
         let pageControl = UIPageControl.init()
-        pageControl.numberOfPages = 3
+        pageControl.numberOfPages = 0
         pageControl.pageIndicatorTintColor = UIColor.whiteColor()
         pageControl.currentPageIndicatorTintColor = UIColor(red:0.99, green:0.75, blue:0.22, alpha:1.00)
         pageControl.currentPage = self.currentIndex
@@ -127,8 +173,4 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return pageControl
     }()
     
-    private lazy var timer: NSTimer = {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(self.timeInterval, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-        return timer
-    }()
 }

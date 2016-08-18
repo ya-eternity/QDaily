@@ -10,6 +10,8 @@ import UIKit
 
 class HomeFeedCell: UITableViewCell {
 
+    
+    
     @IBOutlet weak var subjectImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var category: UILabel!

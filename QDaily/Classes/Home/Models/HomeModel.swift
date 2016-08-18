@@ -27,12 +27,15 @@ class HomeModel: NSObject {
     var categoryId: Int?
     var categoryTitle: String?
     var categoryImage: String?
+    var columnIcon: String?
+    var columnName: String?
     
     convenience init(dictionary: NSDictionary) {
         self.init()
         self.image = dictionary["image"] as? String
+        self.type = dictionary["type"] as? Int
+        
         let dict = dictionary["post"] as! NSDictionary
-        self.type = dict["type"] as? Int
         self.id = dict["id"] as? String
         self.genre = dict["genre"] as? Int
         self.title = dict["title"] as? String
@@ -48,6 +51,13 @@ class HomeModel: NSObject {
         self.categoryId = dict["category"]!["id"] as? Int
         self.categoryTitle = dict["category"]!["title"] as? String
         self.categoryImage = dict["category"]!["normal"] as? String
+        
+        if let column = dict["column"] {
+            self.columnIcon = column["icon"] as? String
+            self.columnName = column["name"] as? String
+
+        }
+        
     }
     
     static func modelArray(fromArray fromArray: Array<AnyObject>?) -> Array<HomeModel>? {
