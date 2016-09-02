@@ -17,9 +17,15 @@ class HomeInstituteCell: UITableViewCell {
     @IBOutlet weak var subjectTitle: UILabel!
     @IBOutlet weak var subjectDetail: UILabel!
     @IBOutlet weak var separatorView: UIView!
-
+    @IBOutlet weak var categoryIcon: UIImageView!
+    
+    
+    var maxY: CGFloat = 0.0
+    
     
     @IBAction func shareClick(sender: UIButton) {
+        
+        
     }
     
     
@@ -29,8 +35,11 @@ class HomeInstituteCell: UITableViewCell {
         subjectImageView.af_setImageWithURL(NSURL.init(string: model.image!)!)
         subjectTitle.text = model.title!
         subjectDetail.text = model.desc!
+        categoryIcon.af_setImageWithURL(NSURL.init(string:model.categoryImage!)!)
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        maxY = screenWidth / 15.0 * 8 + 88 + ZWUtils().heightForString(subjectTitle.text!, withFont: subjectTitle.font, width: screenWidth - 28) + ZWUtils().heightForString(subjectDetail.text!, withFont: subjectDetail.font, width: screenWidth - 28)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -21,10 +21,27 @@ class FeedTypeTwoCell: UITableViewCell {
     @IBOutlet weak var commentIcon: UIImageView!
     @IBOutlet weak var praiseIcon: UIImageView!
 
+    var maxY: CGFloat = 0.0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configure(withModel model: HomeModel) {
+
+        subjectImageView.af_setImageWithURL(NSURL.init(string: model.image!)!)
+        titleLabel.text = model.title!
+        detailLabel.text = model.desc!
+        category.text = model.categoryTitle
+        praiseCount.text =  String(model.praiseCount!)
+        commentCount.text =  String(model.commentCount!)
+        timeLabel.text = model.publishTimeString;
+        
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        maxY = screenWidth / 15.0 * 8 + 66 + ZWUtils().heightForString(titleLabel.text!, withFont: titleLabel.font, width: screenWidth - 28) + ZWUtils().heightForString(detailLabel.text!, withFont: detailLabel.font, width: screenWidth - 28)
+    }
+
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -73,7 +73,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            print(jsonDict)
             self.banners = HomeModel.modelArray(fromArray: jsonDict["response"]["banners"].arrayObject)
             self.feeds = HomeModel.modelArray(fromArray: jsonDict["response"]["feeds"].arrayObject)
-            print(self.feeds)
+//            print(self.feeds)
             for i in 0 ..< (self.banners?.count)! {
                 let model = self.banners![i]
                 self.bannerView.imageUrls.append(model.image!)
@@ -98,7 +98,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let model = self.feeds![indexPath.row]
         switch model.type! {
         case QDailyCellType.Institute.rawValue:
-            let cell:HomeInstituteCell = tableView.dequeueReusableCellWithIdentifier(HomeInstituteCellReusedId, forIndexPath: indexPath) as! HomeInstituteCell
+            let cell: HomeInstituteCell = tableView.dequeueReusableCellWithIdentifier(HomeInstituteCellReusedId, forIndexPath: indexPath) as! HomeInstituteCell
+            cell.configure(withModel: model)
+            return cell
+        case QDailyCellType.CommenFeed.rawValue:
+            let cell: HomeFeedCell = tableView.dequeueReusableCellWithIdentifier(HomeFeedCellReusedId, forIndexPath: indexPath) as! HomeFeedCell
+            cell.configure(withModel: model)
+            return cell
+        case QDailyCellType.FeedTwo.rawValue:
+            let cell: FeedTypeTwoCell = tableView.dequeueReusableCellWithIdentifier(FeedTypeTwoCellReuseId, forIndexPath: indexPath) as! FeedTypeTwoCell
             cell.configure(withModel: model)
             return cell
         default:
@@ -113,10 +121,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch model.type! {
         case QDailyCellType.Institute.rawValue:
             let cell:HomeInstituteCell = tableView.dequeueReusableCellWithIdentifier(HomeInstituteCellReusedId) as! HomeInstituteCell
-            cell.setNeedsUpdateConstraints()
-            cell.updateFocusIfNeeded()
             cell.configure(withModel: model)
-            return CGRectGetMaxY(cell.separatorView.frame)
+            return cell.maxY
+            
+        case QDailyCellType.CommenFeed.rawValue:
+            return 130
+        case QDailyCellType.FeedTwo.rawValue:
+            let cell: FeedTypeTwoCell = tableView.dequeueReusableCellWithIdentifier(FeedTypeTwoCellReuseId) as! FeedTypeTwoCell
+            cell.configure(withModel: model)
+            return cell.maxY
         default:
             break
         }
@@ -126,7 +139,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //   MARK: - ZWCarouselViewDelegate
     func carouselView(carouselView: ZWCarouselView, didClickedIndex index: Int) {
         print(index)
-        UIApplication.sharedApplication().keyWindow?.rootViewController = MainViewController()
+//        UIApplication.sharedApplication().keyWindow?.rootViewController = MainViewController()
     }
     
 //   MARK: - setter and getter
@@ -140,8 +153,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         tableView.registerNib(UINib.init(nibName: self.HomeInstituteCellReusedId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.HomeInstituteCellReusedId)
-        tableView.registerNib(UINib.init(nibName: self.HomeInstituteCellReusedId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.HomeInstituteCellReusedId)
-        tableView.registerNib(UINib.init(nibName: self.HomeInstituteCellReusedId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.HomeInstituteCellReusedId)
+        tableView.registerNib(UINib.init(nibName: self.HomeFeedCellReusedId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.HomeFeedCellReusedId)
+        tableView.registerNib(UINib.init(nibName: self.FeedTypeTwoCellReuseId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.FeedTypeTwoCellReuseId)
         return tableView
     }()
     

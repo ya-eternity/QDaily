@@ -16,7 +16,7 @@ class HomeModel: NSObject {
     var genre: Int?
     var title: String?
     var desc: String?
-    var publishTime: String?
+    var publishTime: Double?
     var commentCount: Int?
     var praiseCount: Int?
     var superTag: String?
@@ -29,6 +29,7 @@ class HomeModel: NSObject {
     var categoryImage: String?
     var columnIcon: String?
     var columnName: String?
+    var publishTimeString: String?
     
     convenience init(dictionary: NSDictionary) {
         self.init()
@@ -40,7 +41,24 @@ class HomeModel: NSObject {
         self.genre = dict["genre"] as? Int
         self.title = dict["title"] as? String
         self.desc = dict["description"] as? String
-        self.publishTime = dict["publish_time"] as? String
+        
+        self.publishTime = dict["publish_time"] as? Double
+        let date = NSDate.init(timeIntervalSince1970: publishTime!)
+        let timeIntervel = -date.timeIntervalSinceNow
+        let dateFormatter = NSDateFormatter.init()
+        dateFormatter.dateFormat = "M月dd日"
+        let dateString = dateFormatter.stringFromDate(date)
+        let todayStrng  = dateFormatter.stringFromDate(NSDate())
+        if dateString == todayStrng {
+            if timeIntervel / 3600 < 1 {
+                publishTimeString = String.init(format: "%d分钟前", Int(timeIntervel/60))
+            } else {
+                publishTimeString = String.init(format: "%d小时前", Int(timeIntervel/3600))
+            }
+        } else {
+            publishTimeString = dateString
+        }
+        
         self.commentCount = dict["comment_count"] as? Int
         self.praiseCount = dict["praise_count"] as? Int
         self.superTag = dict["super_tag"] as? String
@@ -50,7 +68,7 @@ class HomeModel: NSObject {
         self.datatype = dict["datatype"] as? String
         self.categoryId = dict["category"]!["id"] as? Int
         self.categoryTitle = dict["category"]!["title"] as? String
-        self.categoryImage = dict["category"]!["normal"] as? String
+        self.categoryImage = dict["category"]!["image_lab"] as? String
         
         if let column = dict["column"] {
             self.columnIcon = column["icon"] as? String

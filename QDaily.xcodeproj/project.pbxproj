@@ -14,6 +14,7 @@
 		4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */; };
 		4087643A1D2B8BB9003C7D4A /* QDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764391D2B8BB9003C7D4A /* QDailyTests.swift */; };
 		408764451D2B8BB9003C7D4A /* QDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764441D2B8BB9003C7D4A /* QDailyUITests.swift */; };
+		FE5AF6F01D77EF7C0053606C /* ZWUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5AF6EF1D77EF7C0053606C /* ZWUtils.swift */; };
 		FE98A5F91D5D6B7A00584F66 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F31D5D6B7A00584F66 /* HomeModel.swift */; };
 		FE98A5FA1D5D6B7A00584F66 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F51D5D6B7A00584F66 /* MainViewController.swift */; };
 		FE98A5FB1D5D6B7A00584F66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */; };
@@ -86,6 +87,7 @@
 		408764401D2B8BB9003C7D4A /* QDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		408764441D2B8BB9003C7D4A /* QDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDailyUITests.swift; sourceTree = "<group>"; };
 		408764461D2B8BB9003C7D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE5AF6EF1D77EF7C0053606C /* ZWUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWUtils.swift; sourceTree = "<group>"; };
 		FE98A5F31D5D6B7A00584F66 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		FE98A5F51D5D6B7A00584F66 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -186,9 +188,18 @@
 			path = QDailyUITests;
 			sourceTree = "<group>";
 		};
+		FE5AF6EE1D77D1B00053606C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FE5AF6EF1D77EF7C0053606C /* ZWUtils.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		FE98A5F01D5D6B7A00584F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FE5AF6EE1D77D1B00053606C /* Tools */,
 				FE98A5F11D5D6B7A00584F66 /* Home */,
 			);
 			path = Classes;
@@ -411,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE98A5FF1D5D802C00584F66 /* ZWCarouselCell.swift in Sources */,
+				FE5AF6F01D77EF7C0053606C /* ZWUtils.swift in Sources */,
 				FE98A5FA1D5D6B7A00584F66 /* MainViewController.swift in Sources */,
 				FECBAD6E1D64374800DABF6C /* HomeFeedCell.swift in Sources */,
 				FEF69AAA1D6584E900C5E7B9 /* ArticleDetailController.swift in Sources */,
@@ -555,7 +567,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -587,7 +598,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

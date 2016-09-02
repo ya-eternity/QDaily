@@ -25,6 +25,15 @@ class HomeFeedCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configure(withModel model: HomeModel) {
+        subjectImageView.af_setImageWithURL(NSURL.init(string: model.image!)!)
+        titleLabel.text = model.title
+        category.text = model.categoryTitle
+        praiseCount.text =  String(model.praiseCount!)
+        commentCount.text =  String(model.commentCount!)
+        timeLabel.text = model.publishTimeString;
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
