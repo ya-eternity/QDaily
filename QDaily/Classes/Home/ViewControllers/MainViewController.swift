@@ -139,7 +139,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //   MARK: - ZWCarouselViewDelegate
     func carouselView(carouselView: ZWCarouselView, didClickedIndex index: Int) {
         print(index)
-//        UIApplication.sharedApplication().keyWindow?.rootViewController = MainViewController()
     }
     
 //   MARK: - setter and getter
