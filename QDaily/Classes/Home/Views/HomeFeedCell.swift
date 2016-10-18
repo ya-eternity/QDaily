@@ -27,7 +27,7 @@ class HomeFeedCell: UITableViewCell {
     }
     
     func configure(withModel model: HomeModel) {
-        subjectImageView.af_setImageWithURL(NSURL.init(string: model.image!)!)
+        subjectImageView.af_setImage(withURL: URL.init(string: model.image!)!)
         titleLabel.text = model.title
         category.text = model.categoryTitle
         praiseCount.text =  String(model.praiseCount!)
@@ -35,7 +35,7 @@ class HomeFeedCell: UITableViewCell {
         timeLabel.text = model.publishTimeString;
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

@@ -43,12 +43,12 @@ class HomeModel: NSObject {
         self.desc = dict["description"] as? String
         
         self.publishTime = dict["publish_time"] as? Double
-        let date = NSDate.init(timeIntervalSince1970: publishTime!)
+        let date = Date.init(timeIntervalSince1970: publishTime!)
         let timeIntervel = -date.timeIntervalSinceNow
-        let dateFormatter = NSDateFormatter.init()
+        let dateFormatter = DateFormatter.init()
         dateFormatter.dateFormat = "M月dd日"
-        let dateString = dateFormatter.stringFromDate(date)
-        let todayStrng  = dateFormatter.stringFromDate(NSDate())
+        let dateString = dateFormatter.string(from: date)
+        let todayStrng  = dateFormatter.string(from: Date())
         if dateString == todayStrng {
             if timeIntervel / 3600 < 1 {
                 publishTimeString = String.init(format: "%d分钟前", Int(timeIntervel/60))
@@ -66,11 +66,12 @@ class HomeModel: NSObject {
         self.postId = dict["post_id"] as? String
         self.appview = dict["appview"] as? String
         self.datatype = dict["datatype"] as? String
-        self.categoryId = dict["category"]!["id"] as? Int
-        self.categoryTitle = dict["category"]!["title"] as? String
-        self.categoryImage = dict["category"]!["image_lab"] as? String
+        let category = dict["category"] as? NSDictionary
+        self.categoryId = category?["id"] as? Int
+        self.categoryTitle = category?["title"] as? String
+        self.categoryImage = category?["image_lab"] as? String
         
-        if let column = dict["column"] {
+        if let column = dict["column"] as? NSDictionary {
             self.columnIcon = column["icon"] as? String
             self.columnName = column["name"] as? String
 
@@ -78,7 +79,7 @@ class HomeModel: NSObject {
         
     }
     
-    static func modelArray(fromArray fromArray: Array<AnyObject>?) -> Array<HomeModel>? {
+    static func modelArray(fromArray: Array<AnyObject>?) -> Array<HomeModel>? {
         guard let array = fromArray else {
             return nil;
         }

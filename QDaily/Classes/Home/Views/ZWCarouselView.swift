@@ -12,7 +12,7 @@ import AlamofireImage
 
 @objc protocol ZWCarouselViewDelegate: class {
     
-    optional func carouselView(carouselView: ZWCarouselView, didClickedIndex index: Int)
+    @objc optional func carouselView(_ carouselView: ZWCarouselView, didClickedIndex index: Int)
     
 }
 
@@ -22,18 +22,18 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     var imageUrls: Array<String> = [] {
         didSet {
             self.pageControl.numberOfPages = imageUrls.count
-            contentView.contentOffset = CGPointMake(contentView.frame.size.width, 0)
+            contentView.contentOffset = CGPoint(x: contentView.frame.size.width, y: 0)
             
         }
     }
     var titles: Array<String> = []
     
-    var timer: NSTimer?
+    var timer: Timer?
     var currentIndex = 0
     weak var delegate: ZWCarouselViewDelegate?
     
     let timeInterval = 5.0
-    private let ZWCarouselCellReusedId = "ZWCarouselCell";
+    fileprivate let ZWCarouselCellReusedId = "ZWCarouselCell";
     
     
     var alercell: ZWCarouselCell?
@@ -41,13 +41,13 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         
         self.addSubview(self.contentView)
         self.addSubview(self.pageControl)
         
-        self.pageControl.snp_makeConstraints {(make) in
-            make.size.equalTo(self.pageControl.sizeForNumberOfPages(self.pageControl.numberOfPages))
+        self.pageControl.snp.makeConstraints {(make) in
+            make.size.equalTo(self.pageControl.size(forNumberOfPages: self.pageControl.numberOfPages))
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
         }
@@ -64,8 +64,8 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         guard let _ = newSuperview else {
             self.invalidateTimer()
             return
@@ -75,9 +75,9 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func sutupTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(self.timeInterval, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
-        timer!.fireDate = NSDate(timeInterval: timeInterval, sinceDate: NSDate())
+        timer = Timer.scheduledTimer(timeInterval: self.timeInterval, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer!, forMode: RunLoopMode.commonModes)
+        timer!.fireDate = Date(timeInterval: timeInterval, since: Date())
     }
     
     func invalidateTimer() {
@@ -89,14 +89,14 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         currentIndex += 1
         if currentIndex >= self.pageControl.numberOfPages {
             currentIndex = 0;
-            contentView.setContentOffset(CGPointMake(0, 0), animated: false)
+            contentView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         }
         self.pageControl.currentPage = currentIndex
-        self.contentView.setContentOffset(CGPointMake((CGFloat(currentIndex) + 1) * contentView.frame.size.width, 0), animated: true)
+        self.contentView.setContentOffset(CGPoint(x: (CGFloat(currentIndex) + 1) * contentView.frame.size.width, y: 0), animated: true)
     }
     
 // MARK: - UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard imageUrls.count > 0 else {
             return 0
         }
@@ -104,17 +104,17 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: ZWCarouselCell = collectionView.dequeueReusableCellWithReuseIdentifier(ZWCarouselCellReusedId, forIndexPath: indexPath) as! ZWCarouselCell
+        let cell: ZWCarouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: ZWCarouselCellReusedId, for: indexPath) as! ZWCarouselCell
         
-        var index = indexPath.row - 1 < 0 ? imageUrls.count - 1 : indexPath.row - 1
+        var index = (indexPath as NSIndexPath).row - 1 < 0 ? imageUrls.count - 1 : (indexPath as NSIndexPath).row - 1
         if index >= imageUrls.count {
             index = 0
         }
         
         if index < imageUrls.count {
-            cell.imageView?.af_setImageWithURL(NSURL(string: imageUrls[index])!)
+            cell.imageView?.af_setImage(withURL: URL(string: imageUrls[index])!)
         }
         if index < titles.count {
             cell.titleLabel?.text = titles[index]
@@ -122,7 +122,7 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let _delegate = delegate {
             _delegate.carouselView?(self, didClickedIndex: currentIndex);
@@ -130,7 +130,7 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
 //    MARK: UIScrollViewDelegate
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentIndex = Int(scrollView.contentOffset.x / scrollView.bounds.size.width) - 1
         if currentIndex < 0 {
             currentIndex = imageUrls.count - 1
@@ -139,7 +139,7 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         self.pageControl.currentPage = currentIndex
-        scrollView.setContentOffset(CGPointMake((CGFloat(currentIndex) + 1) * contentView.frame.size.width, 0), animated: false)
+        scrollView.setContentOffset(CGPoint(x: (CGFloat(currentIndex) + 1) * contentView.frame.size.width, y: 0), animated: false)
     }
     
 //    MARK: - Setter and Getter
@@ -149,15 +149,15 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.itemSize = self.bounds.size;
-        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         
         let contentView = UICollectionView.init(frame: self.bounds, collectionViewLayout: layout)
         contentView.delegate = self
         contentView.dataSource = self
-        contentView.pagingEnabled = true
+        contentView.isPagingEnabled = true
         contentView.showsHorizontalScrollIndicator = false
-        contentView.backgroundColor = UIColor.whiteColor()
-        contentView.registerClass(ZWCarouselCell.self, forCellWithReuseIdentifier: self.ZWCarouselCellReusedId)
+        contentView.backgroundColor = UIColor.white
+        contentView.register(ZWCarouselCell.self, forCellWithReuseIdentifier: self.ZWCarouselCellReusedId)
         
         return contentView
     }()
@@ -166,7 +166,7 @@ class ZWCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
 //        [unowned self] in
         let pageControl = UIPageControl.init()
         pageControl.numberOfPages = 0
-        pageControl.pageIndicatorTintColor = UIColor.whiteColor()
+        pageControl.pageIndicatorTintColor = UIColor.white
         pageControl.currentPageIndicatorTintColor = UIColor(red:0.99, green:0.75, blue:0.22, alpha:1.00)
         pageControl.currentPage = self.currentIndex
         

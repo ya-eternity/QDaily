@@ -31,22 +31,23 @@ class ZWCarouselCell: UICollectionViewCell {
     func setupSubviews() {
     
         imageView = UIImageView.init()
-        imageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView?.contentMode = UIViewContentMode.scaleAspectFill
+        imageView?.clipsToBounds = true
         self.contentView.addSubview(imageView!)
         
-        imageView?.snp_makeConstraints(closure: { (make) in
+        imageView?.snp.makeConstraints({ (make) in
             make.edges.equalToSuperview()
         })
         
         titleLabel = UILabel.init()
-        titleLabel?.backgroundColor = UIColor.clearColor()
-        titleLabel?.textColor = UIColor.whiteColor()
-        titleLabel?.textAlignment = NSTextAlignment.Left
+        titleLabel?.backgroundColor = UIColor.clear
+        titleLabel?.textColor = UIColor.white
+        titleLabel?.textAlignment = NSTextAlignment.left
         titleLabel?.numberOfLines = 0
-        titleLabel?.font = UIFont.boldSystemFontOfSize(20)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.contentView.addSubview(titleLabel!)
         
-        titleLabel?.snp_makeConstraints(closure: { (make) in
+        titleLabel?.snp.makeConstraints({ (make) in
             make.bottom.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
             make.left.equalToSuperview().inset(30)

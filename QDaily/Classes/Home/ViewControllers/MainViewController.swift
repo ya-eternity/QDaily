@@ -11,14 +11,14 @@ import Alamofire
 import SwiftyJSON
 
 enum QDailyCellType: Int {
-    case Institute
-    case CommenFeed
-    case FeedTwo
+    case institute
+    case commenFeed
+    case feedTwo
 }
 
 
 let HOME_URL = "http://app3.qdaily.com/app3/homes/index/0.json?"
-let SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
+let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ZWCarouselViewDelegate {
@@ -35,8 +35,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         print("deinit self")
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 
     
@@ -48,31 +48,31 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.getData()
         self.view.addSubview(self.tableView)
-        self.tableView.snp_makeConstraints { (make) in
+        self.tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
         self.bannerView.delegate = self;
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
     }
     
     func getData() {
-        Alamofire.request(.GET, HOME_URL).responseJSON {[unowned self] (response) in
+        Alamofire.request(HOME_URL).responseJSON {[unowned self] (response) in
             guard response.result.isSuccess else {
                 print("request error! \(response.result)")
                 return
             }
             let jsonDict = JSON(data: response.data!)
 //            print(jsonDict)
-            self.banners = HomeModel.modelArray(fromArray: jsonDict["response"]["banners"].arrayObject)
-            self.feeds = HomeModel.modelArray(fromArray: jsonDict["response"]["feeds"].arrayObject)
+            self.banners = HomeModel.modelArray(fromArray: jsonDict["response"]["banners"].arrayObject as Array<AnyObject>?)
+            self.feeds = HomeModel.modelArray(fromArray: jsonDict["response"]["feeds"].arrayObject as Array<AnyObject>?)
 //            print(self.feeds)
             for i in 0 ..< (self.banners?.count)! {
                 let model = self.banners![i]
@@ -86,27 +86,27 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
 //  MARK: - UITableViewDelegate and Datasource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let _ = feeds else {
             return 0
         }
         return (feeds?.count)!
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let model = self.feeds![indexPath.row]
+        let model = self.feeds![(indexPath as NSIndexPath).row]
         switch model.type! {
-        case QDailyCellType.Institute.rawValue:
-            let cell: HomeInstituteCell = tableView.dequeueReusableCellWithIdentifier(HomeInstituteCellReusedId, forIndexPath: indexPath) as! HomeInstituteCell
+        case QDailyCellType.institute.rawValue:
+            let cell: HomeInstituteCell = tableView.dequeueReusableCell(withIdentifier: HomeInstituteCellReusedId, for: indexPath) as! HomeInstituteCell
             cell.configure(withModel: model)
             return cell
-        case QDailyCellType.CommenFeed.rawValue:
-            let cell: HomeFeedCell = tableView.dequeueReusableCellWithIdentifier(HomeFeedCellReusedId, forIndexPath: indexPath) as! HomeFeedCell
+        case QDailyCellType.commenFeed.rawValue:
+            let cell: HomeFeedCell = tableView.dequeueReusableCell(withIdentifier: HomeFeedCellReusedId, for: indexPath) as! HomeFeedCell
             cell.configure(withModel: model)
             return cell
-        case QDailyCellType.FeedTwo.rawValue:
-            let cell: FeedTypeTwoCell = tableView.dequeueReusableCellWithIdentifier(FeedTypeTwoCellReuseId, forIndexPath: indexPath) as! FeedTypeTwoCell
+        case QDailyCellType.feedTwo.rawValue:
+            let cell: FeedTypeTwoCell = tableView.dequeueReusableCell(withIdentifier: FeedTypeTwoCellReuseId, for: indexPath) as! FeedTypeTwoCell
             cell.configure(withModel: model)
             return cell
         default:
@@ -115,19 +115,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return UITableViewCell.init()
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let model = self.feeds![indexPath.row]
+        let model = self.feeds![(indexPath as NSIndexPath).row]
         switch model.type! {
-        case QDailyCellType.Institute.rawValue:
-            let cell:HomeInstituteCell = tableView.dequeueReusableCellWithIdentifier(HomeInstituteCellReusedId) as! HomeInstituteCell
+        case QDailyCellType.institute.rawValue:
+            let cell:HomeInstituteCell = tableView.dequeueReusableCell(withIdentifier: HomeInstituteCellReusedId) as! HomeInstituteCell
             cell.configure(withModel: model)
             return cell.maxY
             
-        case QDailyCellType.CommenFeed.rawValue:
+        case QDailyCellType.commenFeed.rawValue:
             return 130
-        case QDailyCellType.FeedTwo.rawValue:
-            let cell: FeedTypeTwoCell = tableView.dequeueReusableCellWithIdentifier(FeedTypeTwoCellReuseId) as! FeedTypeTwoCell
+        case QDailyCellType.feedTwo.rawValue:
+            let cell: FeedTypeTwoCell = tableView.dequeueReusableCell(withIdentifier: FeedTypeTwoCellReuseId) as! FeedTypeTwoCell
             cell.configure(withModel: model)
             return cell.maxY
         default:
@@ -137,28 +137,28 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 //   MARK: - ZWCarouselViewDelegate
-    func carouselView(carouselView: ZWCarouselView, didClickedIndex index: Int) {
+    func carouselView(_ carouselView: ZWCarouselView, didClickedIndex index: Int) {
         print(index)
     }
     
 //   MARK: - setter and getter
-    private lazy var tableView: UITableView = {
+    fileprivate lazy var tableView: UITableView = {
         [unowned self] in
         let tableView = UITableView.init()
         tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.tableHeaderView = self.bannerView
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.registerNib(UINib.init(nibName: self.HomeInstituteCellReusedId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.HomeInstituteCellReusedId)
-        tableView.registerNib(UINib.init(nibName: self.HomeFeedCellReusedId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.HomeFeedCellReusedId)
-        tableView.registerNib(UINib.init(nibName: self.FeedTypeTwoCellReuseId, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: self.FeedTypeTwoCellReuseId)
+        tableView.register(UINib.init(nibName: self.HomeInstituteCellReusedId, bundle: Bundle.main), forCellReuseIdentifier: self.HomeInstituteCellReusedId)
+        tableView.register(UINib.init(nibName: self.HomeFeedCellReusedId, bundle: Bundle.main), forCellReuseIdentifier: self.HomeFeedCellReusedId)
+        tableView.register(UINib.init(nibName: self.FeedTypeTwoCellReuseId, bundle: Bundle.main), forCellReuseIdentifier: self.FeedTypeTwoCellReuseId)
         return tableView
     }()
     
-    private lazy var bannerView: ZWCarouselView = {
-        let bannerView = ZWCarouselView.init(frame: CGRect.init(origin: CGPointZero, size: CGSize.init(width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.8)))
+    fileprivate lazy var bannerView: ZWCarouselView = {
+        let bannerView = ZWCarouselView.init(frame: CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.8)))
         return bannerView
     }()
 

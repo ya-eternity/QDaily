@@ -10,10 +10,10 @@ import UIKit
 
 class ZWUtils {
 
-    func heightForString(string: String, withFont font: UIFont, width: CGFloat) -> CGFloat {
-        return string.boundingRectWithSize(
-            CGSizeMake(width, CGFloat(FLT_MAX)),
-            options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+    func heightForString(_ string: String, withFont font: UIFont, width: CGFloat) -> CGFloat {
+        return string.boundingRect(
+            with: CGSize(width: width, height: CGFloat(FLT_MAX)),
+            options: NSStringDrawingOptions.usesLineFragmentOrigin,
             attributes: [NSFontAttributeName: font],
             context: nil).size.height
     }

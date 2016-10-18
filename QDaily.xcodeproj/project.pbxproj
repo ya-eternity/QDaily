@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; };
-		404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; };
 		408764251D2B8BB9003C7D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408764241D2B8BB9003C7D4A /* AppDelegate.swift */; };
 		4087642C1D2B8BB9003C7D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4087642B1D2B8BB9003C7D4A /* Assets.xcassets */; };
 		4087642F1D2B8BB9003C7D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4087642D1D2B8BB9003C7D4A /* LaunchScreen.storyboard */; };
@@ -20,22 +18,20 @@
 		FE98A5FB1D5D6B7A00584F66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */; };
 		FE98A5FD1D5D6CB600584F66 /* ZWCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */; };
 		FE98A5FF1D5D802C00584F66 /* ZWCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */; };
+		FEBA47741DB612B0003C09A0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA47731DB612B0003C09A0 /* Alamofire.framework */; };
+		FEBA47761DB612BB003C09A0 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA47751DB612BB003C09A0 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FEBA47781DB612BF003C09A0 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA47771DB612BF003C09A0 /* SnapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FEBA477A1DB612C1003C09A0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA47791DB612C1003C09A0 /* SwiftyJSON.framework */; };
+		FEBA47801DB629FB003C09A0 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA477B1DB629FB003C09A0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEBA47821DB629FB003C09A0 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA477C1DB629FB003C09A0 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEBA47841DB629FB003C09A0 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA477D1DB629FB003C09A0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEBA47861DB629FB003C09A0 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA477E1DB629FB003C09A0 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FECBAD661D64156A00DABF6C /* HomeInstituteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECBAD641D64156A00DABF6C /* HomeInstituteCell.swift */; };
 		FECBAD671D64156A00DABF6C /* HomeInstituteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD651D64156A00DABF6C /* HomeInstituteCell.xib */; };
 		FECBAD6E1D64374800DABF6C /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECBAD6C1D64374800DABF6C /* HomeFeedCell.swift */; };
 		FECBAD6F1D64374800DABF6C /* HomeFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD6D1D64374800DABF6C /* HomeFeedCell.xib */; };
 		FECBAD721D64442A00DABF6C /* FeedTypeTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECBAD701D64442A00DABF6C /* FeedTypeTwoCell.swift */; };
 		FECBAD731D64442A00DABF6C /* FeedTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECBAD711D64442A00DABF6C /* FeedTypeTwoCell.xib */; };
-		FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
-		FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; };
-		FEDE50161D596A2100BC52FE /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; };
-		FEDE50171D596A2100BC52FE /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FEDE50181D596A2100BC52FE /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; };
-		FEDE50191D596A2100BC52FE /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FED0C8B71D58864D00D6C14C /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FEDE501A1D596A2100BC52FE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; };
-		FEDE501B1D596A2100BC52FE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FEDE501C1D596A2100BC52FE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; };
-		FEDE501D1D596A2100BC52FE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 400295381D2E863800B297E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEE7CD6D1D7D3AB600752FD2 /* ZWRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7CD6C1D7D3AB600752FD2 /* ZWRefreshView.swift */; };
 		FEF69AAA1D6584E900C5E7B9 /* ArticleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF69AA91D6584E900C5E7B9 /* ArticleDetailController.swift */; };
 /* End PBXBuildFile section */
@@ -64,10 +60,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FEDE50171D596A2100BC52FE /* AlamofireImage.framework in Embed Frameworks */,
-				FEDE50191D596A2100BC52FE /* SnapKit.framework in Embed Frameworks */,
-				FEDE501B1D596A2100BC52FE /* SwiftyJSON.framework in Embed Frameworks */,
-				FEDE501D1D596A2100BC52FE /* Alamofire.framework in Embed Frameworks */,
+				FEBA47861DB629FB003C09A0 /* SwiftyJSON.framework in Embed Frameworks */,
+				FEBA47841DB629FB003C09A0 /* SnapKit.framework in Embed Frameworks */,
+				FEBA47801DB629FB003C09A0 /* Alamofire.framework in Embed Frameworks */,
+				FEBA47821DB629FB003C09A0 /* AlamofireImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,8 +71,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		400295381D2E863800B297E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		408764211D2B8BB8003C7D4A /* QDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		408764241D2B8BB9003C7D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4087642B1D2B8BB9003C7D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,14 +88,20 @@
 		FE98A5F71D5D6B7A00584F66 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE98A5FC1D5D6CB600584F66 /* ZWCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWCarouselView.swift; sourceTree = "<group>"; };
 		FE98A5FE1D5D802C00584F66 /* ZWCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWCarouselCell.swift; sourceTree = "<group>"; };
+		FEBA47731DB612B0003C09A0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FEBA47751DB612BB003C09A0 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		FEBA47771DB612BF003C09A0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		FEBA47791DB612C1003C09A0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FEBA477B1DB629FB003C09A0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FEBA477C1DB629FB003C09A0 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		FEBA477D1DB629FB003C09A0 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		FEBA477E1DB629FB003C09A0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		FECBAD641D64156A00DABF6C /* HomeInstituteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInstituteCell.swift; sourceTree = "<group>"; };
 		FECBAD651D64156A00DABF6C /* HomeInstituteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeInstituteCell.xib; sourceTree = "<group>"; };
 		FECBAD6C1D64374800DABF6C /* HomeFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
 		FECBAD6D1D64374800DABF6C /* HomeFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFeedCell.xib; sourceTree = "<group>"; };
 		FECBAD701D64442A00DABF6C /* FeedTypeTwoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTypeTwoCell.swift; sourceTree = "<group>"; };
 		FECBAD711D64442A00DABF6C /* FeedTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTypeTwoCell.xib; sourceTree = "<group>"; };
-		FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
-		FED0C8B71D58864D00D6C14C /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		FEE7CD6C1D7D3AB600752FD2 /* ZWRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWRefreshView.swift; sourceTree = "<group>"; };
 		FEF69AA91D6584E900C5E7B9 /* ArticleDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,14 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				404643AC1D30DDCC00AC37C1 /* Alamofire.framework in Frameworks */,
-				FEDE50161D596A2100BC52FE /* AlamofireImage.framework in Frameworks */,
-				FED0C8B81D58864D00D6C14C /* AlamofireImage.framework in Frameworks */,
-				FEDE50181D596A2100BC52FE /* SnapKit.framework in Frameworks */,
-				FEDE501A1D596A2100BC52FE /* SwiftyJSON.framework in Frameworks */,
-				404643AD1D30DDCC00AC37C1 /* SwiftyJSON.framework in Frameworks */,
-				FED0C8B91D58864D00D6C14C /* SnapKit.framework in Frameworks */,
-				FEDE501C1D596A2100BC52FE /* Alamofire.framework in Frameworks */,
+				FEBA47741DB612B0003C09A0 /* Alamofire.framework in Frameworks */,
+				FEBA47781DB612BF003C09A0 /* SnapKit.framework in Frameworks */,
+				FEBA477A1DB612C1003C09A0 /* SwiftyJSON.framework in Frameworks */,
+				FEBA47761DB612BB003C09A0 /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,11 +138,12 @@
 		408764181D2B8BB8003C7D4A = {
 			isa = PBXGroup;
 			children = (
-				FED0C8BA1D58865800D6C14C /* Framework */,
+				FEBA47871DB62A20003C09A0 /* Framework */,
 				408764231D2B8BB9003C7D4A /* QDaily */,
 				408764381D2B8BB9003C7D4A /* QDailyTests */,
 				408764431D2B8BB9003C7D4A /* QDailyUITests */,
 				408764221D2B8BB8003C7D4A /* Products */,
+				FEBA47721DB612AF003C09A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,13 +256,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FED0C8BA1D58865800D6C14C /* Framework */ = {
+		FEBA47721DB612AF003C09A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FED0C8B61D58864D00D6C14C /* AlamofireImage.framework */,
-				FED0C8B71D58864D00D6C14C /* SnapKit.framework */,
-				4002953A1D2E863F00B297E7 /* SwiftyJSON.framework */,
-				400295381D2E863800B297E7 /* Alamofire.framework */,
+				FEBA47791DB612C1003C09A0 /* SwiftyJSON.framework */,
+				FEBA47771DB612BF003C09A0 /* SnapKit.framework */,
+				FEBA47751DB612BB003C09A0 /* AlamofireImage.framework */,
+				FEBA47731DB612B0003C09A0 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEBA47871DB62A20003C09A0 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				FEBA477B1DB629FB003C09A0 /* Alamofire.framework */,
+				FEBA477C1DB629FB003C09A0 /* AlamofireImage.framework */,
+				FEBA477D1DB629FB003C09A0 /* SnapKit.framework */,
+				FEBA477E1DB629FB003C09A0 /* SwiftyJSON.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -349,13 +357,16 @@
 					408764201D2B8BB8003C7D4A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 786NH6D36V;
+						LastSwiftMigration = 0800;
 					};
 					408764341D2B8BB9003C7D4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 408764201D2B8BB8003C7D4A;
 					};
 					4087643F1D2B8BB9003C7D4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 408764201D2B8BB8003C7D4A;
 					};
 				};
@@ -603,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zoeywang.QDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -634,6 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = zoeywang.QDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -645,6 +658,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZW.QDailyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QDaily.app/QDaily";
 			};
 			name = Debug;
@@ -657,6 +671,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZW.QDailyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QDaily.app/QDaily";
 			};
 			name = Release;
@@ -668,6 +683,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZW.QDailyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = QDaily;
 			};
 			name = Debug;
@@ -679,6 +695,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZW.QDailyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = QDaily;
 			};
 			name = Release;

@@ -30,7 +30,7 @@ class FeedTypeTwoCell: UITableViewCell {
     
     func configure(withModel model: HomeModel) {
 
-        subjectImageView.af_setImageWithURL(NSURL.init(string: model.image!)!)
+        subjectImageView.af_setImage(withURL: URL.init(string: model.image!)!)
         titleLabel.text = model.title!
         detailLabel.text = model.desc!
         category.text = model.categoryTitle
@@ -38,12 +38,12 @@ class FeedTypeTwoCell: UITableViewCell {
         commentCount.text =  String(model.commentCount!)
         timeLabel.text = model.publishTimeString;
         
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        let screenWidth = UIScreen.main.bounds.size.width
         maxY = screenWidth / 15.0 * 8 + 66 + ZWUtils().heightForString(titleLabel.text!, withFont: titleLabel.font, width: screenWidth - 28) + ZWUtils().heightForString(detailLabel.text!, withFont: detailLabel.font, width: screenWidth - 28)
     }
 
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
